@@ -61,6 +61,9 @@
                     <span>Barang Keluar</span></a>
             </li>
 
+            <?php 
+            $user = auth()->user();
+            if ($user->inGroup('superadmin') || $user->inGroup('admin')) { ?>
             <!-- Heading -->
             <div class="sidebar-heading">
                 Laporan
@@ -76,29 +79,29 @@
                 <div id="collapsePages" class="collapse hide" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="#">Login</a>
-                        <a class="collapse-item" href="#">Register</a>
-                        <a class="collapse-item" href="#">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="#">404 Page</a>
-                        <a class="collapse-item active" href="#">Blank Page</a>
+                        <a class="collapse-item" href="#">Stock Barang</a>
+                        <a class="collapse-item" href="#">Barang Masuk</a>
+                        <a class="collapse-item" href="#">Barang Keluar</a>
                     </div>
                 </div>
             </li>
+            <?php } ?>
 
+            <?php 
+            $user = auth()->user();
+            if ($user->inGroup('superadmin')) { ?>
             <!-- Heading -->
             <div class="sidebar-heading">
                 Administrasi
             </div>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item <?=  ($page_code == 'ADMIN.ADMINISTRASI') ? 'active': ''; ?>">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Administrasi</span></a>
             </li>
+            <?php } ?>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
