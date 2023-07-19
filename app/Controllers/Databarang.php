@@ -42,16 +42,39 @@ class Databarang extends BaseController
             'kategori_barang' => $this->request->getPost('kategoribarang', FILTER_SANITIZE_STRING)
         ];
         $this->databarangModel->insert($data);
-        return redirect()->to(current_url());
+        return redirect()->to(base_url().'databarang');
     }
 
-    public function getEdit()
+    public function getEdit($id=null)
     {
-        return view('master/barang_edit');
+        $data = [
+            'barang' => $this->databarangModel->find($id),
+            'page_title' => 'Edit Barang',
+            'page_code' => 'MASTER.BARANG'
+        ];
+        return view('master/barang_edit', $data);
     }
 
-    public function getDelete()
+    public function postEdit($id=null)
     {
-        return null;
+        $data = [
+            'nama_barang' => $this->request->getPost('namabarang', FILTER_SANITIZE_STRING),
+            'jumlah_barang' => $this->request->getPost('jumlahbarang', FILTER_SANITIZE_STRING),
+            'kategori_barang' => $this->request->getPost('kategoribarang', FILTER_SANITIZE_STRING)
+        ];
+        if ($this->databarangModel->update($id, $data) === true)
+        {
+            session()->setTempdata('SUCCESS', 'Data berhasil diubah', 2);
+        }
+        return redirect()->to(base_url().'databarang');
+    }
+
+    public function getDelete($id=null)
+    {
+        if ($this->databarangModel->where('id', $id)->delete())
+        {
+            session()->setTempdata('SUCCESS', 'Data berhasil dihapus', 2);
+            return redirect()->to(base_url().'databarang');
+        }
     }
 }

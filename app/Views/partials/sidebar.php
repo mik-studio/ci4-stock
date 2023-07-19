@@ -61,7 +61,7 @@
                     <span>Barang Keluar</span></a>
             </li>
 
-            <?php 
+            <?php
             $user = auth()->user();
             if ($user->inGroup('superadmin') || $user->inGroup('admin')) { ?>
             <!-- Heading -->
