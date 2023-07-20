@@ -39,7 +39,10 @@ class Datakategori extends BaseController
         $data = [
             'nama_kategori' => $this->request->getPost('namakategori', FILTER_SANITIZE_STRING)
         ];
-        $this->kategoriModel->insert($data);
+        if ($this->kategoriModel->insert($data))
+        {
+            session()->setTempdata('SUCCESS', 'Data baru berhasil ditambah', 2);
+        }
         return redirect()->to(base_url().'datakategori');
     }
 

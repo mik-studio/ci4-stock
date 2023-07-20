@@ -11,4 +11,9 @@ class ModelDatabarang extends Model
     protected $useAutoIncrement = true;
     protected $returnType     = 'array';
     protected $allowedFields = ['nama_barang', 'jumlah_barang', 'kategori_barang'];
+
+    public function getAllKategori() {
+        $query = $this->db->query('SELECT * FROM kategori');
+        return $query->getResult();
+    }
 }

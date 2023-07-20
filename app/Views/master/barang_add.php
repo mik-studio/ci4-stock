@@ -22,8 +22,9 @@
                                             <label class="col-sm-2 col-form-label">Kategori</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="kategoribarang">
-                                                    <option value="MAKANAN">MAKANAN</option>
-                                                    <option value="MINUMAN">MINUMAN</option>
+                                                    <?php foreach($kategori as $k) { ?>
+                                                    <option value="<?= $k->nama_kategori ?>"><?= $k->nama_kategori ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>

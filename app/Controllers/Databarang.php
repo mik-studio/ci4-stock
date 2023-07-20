@@ -27,6 +27,7 @@ class Databarang extends BaseController
     public function getAdd()
     {
         $data = [
+            'kategori' => $this->databarangModel->getAllKategori(),
             'page_title' => 'Tambah Barang',
             'page_code' => 'MASTER.BARANG'
         ];
@@ -41,7 +42,10 @@ class Databarang extends BaseController
             'jumlah_barang' => $this->request->getPost('jumlahbarang', FILTER_SANITIZE_STRING),
             'kategori_barang' => $this->request->getPost('kategoribarang', FILTER_SANITIZE_STRING)
         ];
-        $this->databarangModel->insert($data);
+        if ($this->databarangModel->insert($data))
+        {
+            session()->setTempdata('SUCCESS', 'Data baru berhasil ditambah', 2);
+        }
         return redirect()->to(base_url().'databarang');
     }
 

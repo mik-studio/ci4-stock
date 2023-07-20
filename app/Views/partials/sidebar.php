@@ -48,14 +48,14 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item <?=  ($page_code == 'BARANG.MASUK') ? 'active': ''; ?>">
                 <a class="nav-link" href="<?= base_url(); ?>barangmasuk">
                     <i class="fas fa-fw fa-shopping-cart"></i>
                     <span>Barang Masuk</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item <?=  ($page_code == 'BARANG.KELUAR') ? 'active': ''; ?>">
                 <a class="nav-link" href="<?= base_url(); ?>barangkeluar">
                     <i class="fas fa-fw fa-paper-plane"></i>
                     <span>Barang Keluar</span></a>
