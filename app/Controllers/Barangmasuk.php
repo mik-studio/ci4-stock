@@ -26,12 +26,25 @@ class Barangmasuk extends BaseController
 
     public function getAdd()
     {
-
+        $data = [
+            'barang' => $this->barangmasukModel->getBarang(),
+            'page_title' => 'Tambah Barang Masuk',
+            'page_code' => 'BARANG.MASUK'
+        ];
+        return view('transaksi/masuk_add', $data);
     }
 
     public function postAdd()
     {
-
+        $data = [
+            'id_barang' => $this->request->getPost('idbarang', FILTER_SANITIZE_STRING),
+            'jumlah_masuk' => $this->request->getPost('jumlahmasuk', FILTER_SANITIZE_STRING)
+        ];
+        if ($this->barangmasukModel->insert($data))
+        {
+            session()->setTempdata('SUCCESS', 'Data baru berhasil ditambah', 2);
+        }
+        return redirect()->to(base_url().'barangmasuk');
     }
 
     public function getEdit($id=null)
