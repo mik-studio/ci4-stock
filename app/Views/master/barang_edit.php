@@ -17,13 +17,13 @@
                                             <input type="text" class="form-control" value="<?= $barang['nama_barang'] ?>" name="namabarang">
                                             </div>
                                         </div>
-                                        
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Kategori</label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="kategoribarang">
-                                                    <option value="MAKANAN" <?=  ($barang['kategori_barang'] == 'MAKANAN') ? 'selected': ''; ?>>MAKANAN</option>
-                                                    <option value="MINUMAN" <?=  ($barang['kategori_barang'] == 'MINUMAN') ? 'selected': ''; ?>>MINUMAN</option>
+                                                    <?php foreach($kategori as $k) { ?>
+                                                    <option value="<?= $k->id ?>" <?= ($barang['id_kategori'] == $k->id) ? 'selected' : ''; ?>><?= $k->nama_kategori ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>

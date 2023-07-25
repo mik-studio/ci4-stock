@@ -17,7 +17,7 @@ class Databarang extends BaseController
     public function getIndex()
     {
         $data = [
-            'barang' => $this->databarangModel->findAll(),
+            'barang' => $this->databarangModel->getDatabarang(),
             'page_title' => 'Data Barang',
             'page_code' => 'MASTER.BARANG'
         ];
@@ -40,7 +40,7 @@ class Databarang extends BaseController
         $data = [
             'nama_barang' => $this->request->getPost('namabarang', FILTER_SANITIZE_STRING),
             'jumlah_barang' => $this->request->getPost('jumlahbarang', FILTER_SANITIZE_STRING),
-            'kategori_barang' => $this->request->getPost('kategoribarang', FILTER_SANITIZE_STRING)
+            'id_kategori' => $this->request->getPost('kategoribarang', FILTER_SANITIZE_STRING)
         ];
         if ($this->databarangModel->insert($data))
         {
@@ -53,6 +53,7 @@ class Databarang extends BaseController
     {
         $data = [
             'barang' => $this->databarangModel->find($id),
+            'kategori' => $this->databarangModel->getAllKategori(),
             'page_title' => 'Edit Barang',
             'page_code' => 'MASTER.BARANG'
         ];
@@ -64,7 +65,7 @@ class Databarang extends BaseController
         $data = [
             'nama_barang' => $this->request->getPost('namabarang', FILTER_SANITIZE_STRING),
             'jumlah_barang' => $this->request->getPost('jumlahbarang', FILTER_SANITIZE_STRING),
-            'kategori_barang' => $this->request->getPost('kategoribarang', FILTER_SANITIZE_STRING)
+            'id_kategori' => $this->request->getPost('kategoribarang', FILTER_SANITIZE_STRING)
         ];
         if ($this->databarangModel->update($id, $data) === true)
         {

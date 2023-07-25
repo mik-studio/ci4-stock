@@ -23,7 +23,7 @@
                                             <div class="col-sm-10">
                                                 <select class="form-control" name="kategoribarang">
                                                     <?php foreach($kategori as $k) { ?>
-                                                    <option value="<?= $k->nama_kategori ?>"><?= $k->nama_kategori ?></option>
+                                                    <option value="<?= $k->id ?>"><?= $k->nama_kategori ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
