@@ -20,7 +20,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Kategori</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="kategoribarang">
+                                                <select class="form-control select2" name="kategoribarang">
                                                     <?php foreach($kategori as $k) { ?>
                                                     <option value="<?= $k->id ?>" <?= ($barang['id_kategori'] == $k->id) ? 'selected' : ''; ?>><?= $k->nama_kategori ?></option>
                                                     <?php } ?>
@@ -31,7 +31,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Jumlah</label>
                                             <div class="col-sm-10">
-                                            <input type="number" class="form-control" value="<?= $barang['jumlah_barang'] ?>" name="jumlahbarang">
+                                            <input type="number" class="form-control" value="<?= $barang['jumlah_barang'] ?>" name="jumlahbarang" disabled="disabled">
                                             </div>
                                         </div>
 

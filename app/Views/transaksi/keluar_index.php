@@ -5,7 +5,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800"><?= $page_title ?><a class="btn btn-success btn-sm float-right" href="<?= base_url(); ?>barangmasuk/add" role="button"><i class="fas fa-plus"></i> BARANG MASUK</a></h1>
+                    <h1 class="h3 mb-4 text-gray-800"><?= $page_title ?><a class="btn btn-success btn-sm float-right" href="<?= base_url(); ?>barangkeluar/add" role="button"><i class="fas fa-plus"></i> BARANG keluar</a></h1>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
@@ -23,16 +23,16 @@
                                         <thead>
                                             <tr>
                                                 <th>Nama Barang</th>
-                                                <th>Tanggal Masuk</th>
+                                                <th>Tanggal keluar</th>
                                                 <th>Jumlah</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($barangmasuk->getResult() as $bm) { ?>
+                                            <?php foreach ($barangkeluar->getResult() as $bm) { ?>
                                             <tr>
                                                 <td><?= $bm->nama_barang ?></td>
-                                                <td><?= $bm->tanggal_masuk ?></td>
-                                                <td><?= $bm->jumlah_masuk ?></td>
+                                                <td><?= $bm->tanggal_keluar ?></td>
+                                                <td><?= $bm->jumlah_keluar ?></td>
                                             </tr>
                                             <?php } ?>
                                         </tbody>

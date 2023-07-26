@@ -21,7 +21,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Kategori</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="kategoribarang">
+                                                <select class="form-control select2" name="kategoribarang">
                                                     <?php foreach($kategori as $k) { ?>
                                                     <option value="<?= $k->id ?>"><?= $k->nama_kategori ?></option>
                                                     <?php } ?>

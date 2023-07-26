@@ -46,19 +46,4 @@ class Barangmasuk extends BaseController
         }
         return redirect()->to(base_url().'barangmasuk');
     }
-
-    public function getEdit($id=null)
-    {
-
-    }
-
-    public function postEdit($id=null)
-    {
-
-    }
-
-    public function getDelete($id=null)
-    {
-
-    }
 }

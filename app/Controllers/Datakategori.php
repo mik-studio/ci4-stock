@@ -70,10 +70,12 @@ class Datakategori extends BaseController
 
     public function getDelete($id=null)
     {
-        if ($this->kategoriModel->where('id', $id)->delete())
-        {
-            session()->setTempdata('SUCCESS', 'Data berhasil dihapus', 2);
-            return redirect()->to(base_url().'datakategori');
-        }
+        // if ($this->kategoriModel->where('id', $id)->delete())
+        // {
+        //     session()->setTempdata('SUCCESS', 'Data berhasil dihapus', 2);
+        //     return redirect()->to(base_url().'datakategori');
+        // }
+        session()->setTempdata('SUCCESS', 'Data tidak bisa dihapus', 2);
+        return redirect()->to(base_url().'datakategori');
     }
 }

@@ -30,7 +30,7 @@
                                             <?php foreach($kategori as $v) { ?>
                                             <tr>
                                                 <td><?= $v['nama_kategori'] ?></td>
-                                                <td><a class="btn btn-success btn-sm" href="<?= base_url(); ?>datakategori/edit/<?= $v['id'] ?>" role="button"><i class="fas fa-edit"></i></a> <a class="btn btn-danger btn-sm" href="<?= base_url(); ?>datakategori/delete/<?= $v['id'] ?>" role="button"><i class="fas fa-trash"></i></a></td>
+                                                <td><a class="btn btn-success btn-sm" href="<?= base_url(); ?>datakategori/edit/<?= $v['id'] ?>" role="button"><i class="fas fa-edit"></i></a></td>
                                             </tr>
                                             <?php } ?>
                                         </tbody>

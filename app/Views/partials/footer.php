@@ -51,7 +51,14 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url(); ?>public/assets/js/sb-admin-2.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2({
+                theme: 'bootstrap4'
+            });
+        });
+    </script>
 </body>
 
 </html>

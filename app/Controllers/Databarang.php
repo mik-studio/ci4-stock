@@ -64,7 +64,6 @@ class Databarang extends BaseController
     {
         $data = [
             'nama_barang' => $this->request->getPost('namabarang', FILTER_SANITIZE_STRING),
-            'jumlah_barang' => $this->request->getPost('jumlahbarang', FILTER_SANITIZE_STRING),
             'id_kategori' => $this->request->getPost('kategoribarang', FILTER_SANITIZE_STRING)
         ];
         if ($this->databarangModel->update($id, $data) === true)
@@ -76,10 +75,12 @@ class Databarang extends BaseController
 
     public function getDelete($id=null)
     {
-        if ($this->databarangModel->where('id', $id)->delete())
-        {
-            session()->setTempdata('SUCCESS', 'Data berhasil dihapus', 2);
-            return redirect()->to(base_url().'databarang');
-        }
+        // if ($this->databarangModel->where('id', $id)->delete())
+        // {
+        //     session()->setTempdata('SUCCESS', 'Data berhasil dihapus', 2);
+        //     return redirect()->to(base_url().'databarang');
+        // }
+        session()->setTempdata('SUCCESS', 'Data tidak bisa dihapus', 2);
+        return redirect()->to(base_url().'databarang');
     }
 }

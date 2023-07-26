@@ -34,7 +34,7 @@
                                                 <td><?= $v->nama_barang ?></td>
                                                 <td><?= $v->nama_kategori ?></td>
                                                 <td><?= $v->jumlah_barang ?></td>
-                                                <td><a class="btn btn-success btn-sm" href="<?= base_url(); ?>databarang/edit/<?= $v->id ?>" role="button"><i class="fas fa-edit"></i></a> <a class="btn btn-danger btn-sm" href="<?= base_url(); ?>databarang/delete/<?= $v->id ?>" role="button"><i class="fas fa-trash"></i></a></td>
+                                                <td><a class="btn btn-success btn-sm" href="<?= base_url(); ?>databarang/edit/<?= $v->id ?>" role="button"><i class="fas fa-edit"></i></a></td>
                                             </tr>
                                             <?php } ?>
                                         </tbody>
