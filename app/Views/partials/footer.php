@@ -51,9 +51,17 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url(); ?>public/assets/js/sb-admin-2.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
+            $('.table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '<?php echo site_url('test/basic_model'); ?>'
+            });
             $('.select2').select2({
                 theme: 'bootstrap4'
             });
