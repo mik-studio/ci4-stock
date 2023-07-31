@@ -17,7 +17,7 @@ class Databarang extends BaseController
     public function getIndex()
     {
         $data = [
-            'barang' => $this->databarangModel->getDatabarang(),
+            // 'barang' => $this->databarangModel->getDatabarang(),
             'page_title' => 'Data Barang',
             'page_code' => 'MASTER.BARANG'
         ];
@@ -82,5 +82,9 @@ class Databarang extends BaseController
         // }
         session()->setTempdata('SUCCESS', 'Data tidak bisa dihapus', 2);
         return redirect()->to(base_url().'databarang');
+    }
+
+    public function getListbarang() {
+        return $this->databarangModel->JsonListBarang();
     }
 }

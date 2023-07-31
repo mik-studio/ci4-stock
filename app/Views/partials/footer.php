@@ -55,12 +55,21 @@
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
     <script>
         $(document).ready(function() {
-            $('#dataTableBarang').DataTable({
+            $('#dtDatabarang').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '<?php echo site_url('test/basic_model'); ?>'
+                ajax: '<?php echo site_url() . "/databarang/listbarang"; ?>',
+                order: [],
+                columns: [
+                    {data: 'nama_barang', name: 'barang.nama_barang'},
+                    {data: 'nama_kategori', name: 'kategori.nama_kategori'},
+                    {data: 'jumlah_barang', name: 'barang.jumlah_barang'},
+                    {data: 'action'}
+                ],
+                pageLength: 10,
             });
             $('.select2').select2({
                 theme: 'bootstrap4'
