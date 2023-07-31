@@ -19,7 +19,7 @@
                                         </div>
                                     </div>
                                     <?php endif; ?>
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" id="dataTableBarang" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Nama Barang</th>
