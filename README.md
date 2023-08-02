@@ -6,7 +6,7 @@ Aplikasi stock barang menggunakan CodeIgniter 4. Repo ini saya gunakan untuk bel
 
 ## Setup
 
-- Sesuaikan konfigurasi database yang ada di App\Config\Database.php
+Sesuaikan konfigurasi yang ada di App\Config\Database.php dan App\Config\App.php
 
 ## Install
 
