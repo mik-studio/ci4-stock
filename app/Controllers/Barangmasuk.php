@@ -17,7 +17,7 @@ class Barangmasuk extends BaseController
     public function getIndex()
     {
         $data = [
-            'barangmasuk' => $this->barangmasukModel->getBarangmasuk(),
+            // 'barangmasuk' => $this->barangmasukModel->getBarangmasuk(),
             'page_title' => 'Barang Masuk',
             'page_code' => 'BARANG.MASUK'
         ];
@@ -45,5 +45,9 @@ class Barangmasuk extends BaseController
             session()->setTempdata('SUCCESS', 'Data baru berhasil ditambah', 2);
         }
         return redirect()->to(base_url().'barangmasuk');
+    }
+
+    public function getListbarangmasuk() {
+        return $this->barangmasukModel->JsonBarangMasuk();
     }
 }

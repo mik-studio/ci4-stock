@@ -55,19 +55,54 @@
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
             $('#dtDatabarang').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '<?php echo site_url() . "/databarang/listbarang"; ?>',
+                ajax: '<?php echo base_url() . "databarang/listbarang"; ?>',
                 order: [],
                 columns: [
                     {data: 'nama_barang', name: 'barang.nama_barang'},
                     {data: 'nama_kategori', name: 'kategori.nama_kategori'},
                     {data: 'jumlah_barang', name: 'barang.jumlah_barang'},
                     {data: 'action'}
+                ],
+                pageLength: 10,
+            });
+            $('#dtDatakategori').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '<?php echo base_url() . "datakategori/listkategori"; ?>',
+                order: [],
+                columns: [
+                    {data: 'nama_kategori'},
+                    {data: 'action'}
+                ],
+                pageLength: 10,
+            });
+            $('#dtBarangmasuk').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '<?php echo base_url() . "barangmasuk/listbarangmasuk"; ?>',
+                order: [],
+                columns: [
+                    {data: 'nama_barang', name: 'barang.nama_barang'},
+                    {data: 'tanggal_masuk', name: 'masuk.tanggal_masuk'},
+                    {data: 'jumlah_masuk', name: 'masuk.jumlah_masuk'}
+                ],
+                pageLength: 10,
+            });
+            $('#dtBarangkeluar').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '<?php echo base_url() . "barangkeluar/listbarangkeluar"; ?>',
+                order: [],
+                columns: [
+                    {data: 'nama_barang', name: 'barang.nama_barang'},
+                    {data: 'tanggal_keluar', name: 'keluar.tanggal_keluar'},
+                    {data: 'jumlah_keluar', name: 'keluar.jumlah_keluar'}
                 ],
                 pageLength: 10,
             });

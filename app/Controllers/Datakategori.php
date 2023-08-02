@@ -17,7 +17,7 @@ class Datakategori extends BaseController
     public function getIndex()
     {
         $data = [
-            'kategori' => $this->kategoriModel->findAll(),
+            // 'kategori' => $this->kategoriModel->findAll(),
             'page_title' => 'Data Kategori',
             'page_code' => 'MASTER.KATEGORI'
         ];
@@ -77,5 +77,9 @@ class Datakategori extends BaseController
         // }
         session()->setTempdata('SUCCESS', 'Data tidak bisa dihapus', 2);
         return redirect()->to(base_url().'datakategori');
+    }
+
+    public function getListkategori() {
+        return $this->kategoriModel->JsonListKategori();
     }
 }

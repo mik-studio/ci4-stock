@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use \Hermawan\DataTables\DataTable;
 
 class ModelBarangkeluar extends Model
 {
@@ -46,5 +47,17 @@ class ModelBarangkeluar extends Model
         $builder->update();
 
         return $data;
+    }
+
+    public function JsonBarangKeluar() {
+        $db = db_connect();
+
+        $builder = $db->table('keluar')
+                ->select('keluar.id, barang.nama_barang, keluar.tanggal_keluar, keluar.jumlah_keluar')
+                ->join('barang', 'barang.id = keluar.id_barang');
+
+        return DataTable::of($builder)->hide('id')->postQuery(function($builder){
+            $builder->orderBy('keluar.tanggal_keluar', 'desc');
+        })->toJson(true);
     }
 }

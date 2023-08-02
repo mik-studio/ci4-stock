@@ -22,7 +22,7 @@
                                         </div>
                                     </div>
                                     <?php endif; ?>
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" id="dtDatakategori" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Nama Kategori</th>
@@ -30,12 +30,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($kategori as $v) { ?>
                                             <tr>
-                                                <td><?= $v['nama_kategori'] ?></td>
-                                                <td><a class="btn btn-success btn-sm" href="<?= base_url(); ?>datakategori/edit/<?= $v['id'] ?>" role="button"><i class="fas fa-edit"></i></a></td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
-                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

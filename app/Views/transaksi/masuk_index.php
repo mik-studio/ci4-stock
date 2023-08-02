@@ -22,7 +22,7 @@
                                         </div>
                                     </div>
                                     <?php endif; ?>
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" id="dtBarangmasuk" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Nama Barang</th>
@@ -31,13 +31,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($barangmasuk->getResult() as $bm) { ?>
                                             <tr>
-                                                <td><?= $bm->nama_barang ?></td>
-                                                <td><?= $bm->tanggal_masuk ?></td>
-                                                <td><?= $bm->jumlah_masuk ?></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
-                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
