@@ -70,18 +70,18 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?=  ($page_code == 'LAPORAN.STOCKBARANG') ? 'active': ''; ?>">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
                     aria-controls="collapsePages">
                     <i class="fas fa-fw fa-print"></i>
                     <span>Laporan</span>
                 </a>
-                <div id="collapsePages" class="collapse hide" aria-labelledby="headingPages"
+                <div id="collapsePages" class="collapse <?=  ($page_code == 'LAPORAN.STOCKBARANG' || $page_code == 'LAPORAN.BARANGMASUK' || $page_code == 'LAPORAN.BARANGKELUAR') ? 'show': 'hide'; ?>" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Stock Barang</a>
-                        <a class="collapse-item" href="#">Barang Masuk</a>
-                        <a class="collapse-item" href="#">Barang Keluar</a>
+                        <a class="collapse-item <?=  ($page_code == 'LAPORAN.STOCKBARANG') ? 'active': ''; ?>" href="<?= base_url(); ?>laporan/stockbarang">Stock Barang</a>
+                        <a class="collapse-item <?=  ($page_code == 'LAPORAN.BARANGMASUK') ? 'active': ''; ?>" href="<?= base_url(); ?>laporan/barangmasuk">Barang Masuk</a>
+                        <a class="collapse-item <?=  ($page_code == 'LAPORAN.BARANGKELUAR') ? 'active': ''; ?>" href="<?= base_url(); ?>laporan/barangkeluar">Barang Keluar</a>
                     </div>
                 </div>
             </li>
