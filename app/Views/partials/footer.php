@@ -128,13 +128,19 @@
                 dom: 'Bfrtip',
                 buttons: [{
                     extend: 'pdfHtml5',
-                    pageSize: 'A4'
+                    pageSize: 'A4',
+                    filename: 'lap_stockbarang_pdf',
+                    orientation: 'portrait',
+                    title: 'LAPORAN STOCK BARANG',
+
+                    exportOptions: {
+                        modifier: {
+                            page: 'current'
+                        }
+                    },
                 }],
-                exportOptions: {
-                    modifier: {
-                        page: 'current'
-                    }
-                }
+                
+                
             });
             $('.select2').select2({
                 theme: 'bootstrap4'
